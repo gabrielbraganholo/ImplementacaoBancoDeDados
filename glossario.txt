@@ -1,0 +1,4 @@
+backwards enginery = a partir de um código cria-se o projeto
+extensão = ajudar a comunidade de alguma maneira
+forward enginery = a partir de um projeto cria-se o código
+tupla = linha de registro(atributo)
