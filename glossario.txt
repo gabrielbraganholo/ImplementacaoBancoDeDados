@@ -1,3 +1,4 @@
+atributo multivalorado = um dado que pode ter dois ou mais valores para a mesma entidade
 backwards enginery = a partir de um código cria-se o projeto
 extensão = ajudar a comunidade de alguma maneira
 forward enginery = a partir de um projeto cria-se o código
