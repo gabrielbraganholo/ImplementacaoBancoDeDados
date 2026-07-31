@@ -58,3 +58,7 @@ Principais funções:
 - Controlar o acesso aos dados.
 - Facilitar consultas, inserções, atualizações e exclusões de informações.
 - Realizar controle de concorrência e recuperação em caso de falhas.
+
+## Exercício de Aula (Funcionario-Departamento)
+
+![alt text](image.png)
