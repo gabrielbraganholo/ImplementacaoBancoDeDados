@@ -61,4 +61,8 @@ Principais funções:
 
 ## Exercício de Aula (Funcionario-Departamento)
 
+### Modelo Conceitual 
 ![alt text](image.png)
+
+### Modelo Lógico
+![alt text](image-1.png)
