@@ -1,6 +1,50 @@
-# 07/08 
+# 09/10
 
-## 
+## Transações
+
+Uma **transação** é um conjunto de operações SQL executadas como uma única unidade de trabalho, garantindo que os dados permaneçam consistentes mesmo quando ocorrem erros.
+
+- `BEGIN TRANSACTION`: inicia uma transação.
+- `COMMIT`: confirma as alterações realizadas.
+- `ROLLBACK`: desfaz as alterações realizadas pela transação.
+
+### Propriedades ACID
+
+As transações devem seguir quatro propriedades fundamentais, conhecidas como **ACID**:
+
+- **Atomicidade:** todas as operações são concluídas ou todas são desfeitas em caso de falha.
+- **Consistência:** garante que os dados respeitem as regras e restrições do banco.
+- **Isolamento:** evita interferências indevidas entre transações executadas simultaneamente.
+- **Durabilidade:** garante que as alterações confirmadas sejam persistidas, mesmo após falhas do sistema.
+
+### Tratamento de erros (TRY...CATCH)
+
+O SQL Server utiliza `TRY...CATCH` para identificar e tratar erros durante a execução de comandos SQL.
+
+- `BEGIN TRY`: inicia o bloco de execução.
+- `BEGIN CATCH`: inicia o bloco de tratamento de erros.
+- `ERROR_MESSAGE()`: retorna a mensagem do erro ocorrido.
+- `@@TRANCOUNT`: informa a quantidade de transações abertas na conexão.
+
+### Estrutura
+
+```
+BEGIN TRY
+    BEGIN TRANSACTION;
+
+    -- Operações SQL
+
+    COMMIT TRANSACTION;
+END TRY
+BEGIN CATCH
+    IF @@TRANCOUNT > 0
+        ROLLBACK TRANSACTION;
+
+    SELECT ERROR_MESSAGE() AS Erro;
+END CATCH;
+```
+
+Se as operações forem executadas com sucesso, o `COMMIT` confirma as alterações. Caso ocorra um erro capturável, o fluxo passa para o `CATCH`, onde o `ROLLBACK` desfaz a transação, se ainda houver uma aberta.
 
 
 # 31/07
